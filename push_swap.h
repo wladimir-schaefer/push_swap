@@ -6,17 +6,34 @@
 # include <unistd.h>
 # include <limits.h>
 
+typedef struct s_node
+{
+	int				value;
+	int				index;
+	struct s_node	*next;
+	struct s_node	*prev;
+}	t_node;
+
 typedef struct s_stack
 {
-	int	value;
-
-	struct s_stack	*next;
-	struct s_stack	*prev;
+	int		size;
+	t_node	*top;
+	t_node	*bottom;
 }	t_stack;
 
 // main.c
-int		main(int argc, char **argv);
-void	stack_init(t_stack	*a, char **argv, int flag);
-long	ft_atol(const char *nptr);
+int			main(int argc, char **argv);
+t_stack		*stack_init(char **argv);
+long long	ft_atol(const char *nptr);
+void		sort_stack(t_stack *a, t_stack *b);
+t_stack		*stack_init(char **argv);
+void		append_node(t_stack *a, int nbr);
+int			error_syntax(char *nbr);
+int			error_repetition(t_node *a, int nbr);
+void		free_split(char **arr);
+void		error_free(t_node **a, char **argv);
+
+
+void	print_stack(t_stack	*a);
 
 #endif
