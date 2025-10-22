@@ -1,5 +1,5 @@
 NAME = push_swap
-SRC  = main.c
+SRC  = main.c utils_free.c utils_error.c
 OBJ  = $(SRC:.c=.o)
 
 # Paths

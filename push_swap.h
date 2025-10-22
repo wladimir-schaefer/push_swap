@@ -24,16 +24,22 @@ typedef struct s_stack
 // main.c
 int			main(int argc, char **argv);
 t_stack		*stack_init(char **argv);
-long long	ft_atol(const char *nptr);
-void		sort_stack(t_stack *a, t_stack *b);
-t_stack		*stack_init(char **argv);
 void		append_node(t_stack *a, int nbr);
+void		sort_stack(t_stack *a, t_stack *b);
+int			if_stack_sorted(t_stack *a);
+
+// utils_free.c
+void		error_free(t_stack *a, t_stack *b);
+void		free_stack(t_stack *stack);
+void		free_split(char **arr);
+
+// utils_error.c
 int			error_syntax(char *nbr);
 int			error_repetition(t_node *a, int nbr);
-void		free_split(char **arr);
-void		error_free(t_node **a, char **argv);
+long long	ft_atol(const char *nptr);
 
 
+/////////////////////////////////
 void	print_stack(t_stack	*a);
 
 #endif
